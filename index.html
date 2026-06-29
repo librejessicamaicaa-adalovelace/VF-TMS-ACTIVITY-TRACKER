@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Virginia Food — TM Tracker</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="loadingScreen">
+  <div class="login-badge">V</div>
+  <div class="ld-spin"></div>
+  <div style="color:rgba(255,255,255,.5);font-size:13px">Loading Virginia Food TM Tracker...</div>
+</div>
+
+<div id="loginScreen" class="login-wrap" style="display:none">
+  <div class="login-box">
+    <div class="login-logo">
+      <div class="login-badge">V</div>
+      <div class="login-title">Virginia Food, Inc.</div>
+      <div class="login-sub">Trade Marketing Tracker</div>
+    </div>
+    <div class="login-card">
+      <div class="login-ct">Welcome back</div>
+      <div class="login-ct-sub">Sign in with your email address</div>
+      <div style="margin-bottom:14px">
+        <label class="fl">Email Address</label>
+        <input class="fc" type="email" id="lgEmail" placeholder="e.g. mreyes@virginiafood.com.ph" autocomplete="email">
+      </div>
+      <div style="margin-bottom:8px">
+        <label class="fl">Password</label>
+        <div style="position:relative">
+          <input class="fc" type="password" id="lgPass" placeholder="Your password" style="padding-right:40px">
+          <button id="pwEye" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:15px;color:var(--muted)">👁</button>
+        </div>
+        <div class="err-msg" id="lgErr">Incorrect email or password.</div>
+      </div>
+      <div style="text-align:right;margin-bottom:18px">
+        <button class="link-btn" id="forgotBtn">Forgot password?</button>
+      </div>
+      <button class="btn btn-primary w-full" style="padding:12px" id="loginBtn">Sign In →</button>
+      <div style="margin-top:14px;padding:10px;background:var(--bg);border-radius:8px;font-size:12px;color:var(--muted);line-height:1.9">
+        <strong>Demo credentials:</strong><br>
+        TMS: <code>vfitrademarketingozamiz@gmail.com</code> / <code>904361</code><br>
+        Supervisor: <code>brmselim@virginiafood.com.ph</code> / <code>901439</code><br>
+        KAS: <code>kas@virginiafood.com.ph</code> / <code>kas2024</code><br>
+        Manager: <code>msdalumpines@virginiafood.com.ph</code> / <code>900591</code>
+      </div>
+    </div>
+    <div class="login-note">Virginia Food, Inc. · Internal Use Only</div>
+  </div>
+</div>
+
+<div id="appScreen" class="app" style="display:none">
+  <aside class="sidebar" id="sidebar">
+    <div class="sb-logo"><div class="sb-logo-row"><div class="sb-icon">V</div><div><div class="sb-title">Virginia Food</div><div class="sb-sub">TM Tracker</div></div></div></div>
+    <div class="sb-role"><div class="sb-role-lbl">Signed in as</div><div class="sb-role-val" id="sbRoleVal">—</div></div>
+    <nav class="sb-nav" id="sbNav"></nav>
+    <div class="sb-footer">
+      <div class="user-pill" id="settingsLink">
+        <div class="ava" id="sbAva" style="background:var(--red)">—</div>
+        <div style="flex:1;min-width:0"><div class="uname" id="sbName">—</div><div class="uarea" id="sbEmail">—</div></div>
+        <button class="logout" id="logoutBtn" title="Sign Out">⏻</button>
+      </div>
+    </div>
+  </aside>
+  <div class="main">
+    <div class="topbar">
+      <button class="ham" id="hamBtn">☰</button>
+      <div class="tb-title" id="pgTitle">Dashboard</div>
+      <div class="tb-date" id="tbDate"></div>
+      <div class="tb-acts" id="tbActs"></div>
+    </div>
+    <div class="page-wrap" id="pgWrap"></div>
+  </div>
+</div>
+
+<div class="mo" id="modalEl"><div class="md" id="modalBody"></div></div>
+<div id="toast-wrap"></div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
